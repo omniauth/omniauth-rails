@@ -39,7 +39,7 @@ module OmniAuth
         private
 
         def handle_unverified_request
-          forgery_protection_strategy.new(self).handle_unverified_request
+          # Implemented by subclass.
         end
 
         def verified_request?
@@ -60,16 +60,8 @@ module OmniAuth
           ::ApplicationController.request_forgery_protection_token
         end
 
-        def forgery_protection_strategy
-          ::ApplicationController.forgery_protection_strategy
-        end
-
         def log_warning_on_csrf_failure
-          if ::ApplicationController.respond_to?(:log_warning_on_csrf_failure)
-            ::ApplicationController.log_warning_on_csrf_failure
-          else
-            true
-          end
+          true
         end
 
         def form_authenticity_param

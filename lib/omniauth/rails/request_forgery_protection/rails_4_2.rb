@@ -1,4 +1,4 @@
-require 'omniauth/rails/request_forgery_protection/base'
+require 'omniauth/rails/request_forgery_protection/rails_4_1'
 
 require 'action_controller'
 require 'active_support/security_utils'
@@ -7,9 +7,13 @@ module OmniAuth
   module Rails
     module RequestForgeryProtection
       # Based on ActionController::RequestForgeryProtection in Rails 4.2.1.
-      class Rails42 < Base
+      class Rails42 < Rails41
 
         private
+
+        def log_warning_on_csrf_failure
+          ::ApplicationController.log_warning_on_csrf_failure
+        end
 
         AUTHENTICITY_TOKEN_LENGTH = ActionController::RequestForgeryProtection::AUTHENTICITY_TOKEN_LENGTH
 
