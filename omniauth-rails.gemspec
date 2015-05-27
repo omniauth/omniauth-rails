@@ -18,6 +18,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "omniauth", "~> 1.2.2"
-  spec.add_dependency "rails", "~> 4.1"
+  spec.add_dependency "rails", ">= 3.2, < 5"
   spec.add_development_dependency "bundler", "~> 1.9"
 end
