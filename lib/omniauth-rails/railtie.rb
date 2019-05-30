@@ -6,7 +6,12 @@ module OmniAuth
     class Railtie < ::Rails::Railtie
       initializer 'OmniAuth request_forgery_protection' do
         OmniAuth.config.allowed_request_methods = [:post]
-        OmniAuth.config.before_request_phase do |env|
+
+        method = OmniAuth.config.respond_to?(:validate_request_phase) ? 
+          :validate_request_phase :
+          :before_request_phase
+
+        OmniAuth.config.send(method) do |env|
           OmniAuth::Rails::RequestForgeryProtection.call(env)
         end
       end
