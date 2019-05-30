@@ -10,7 +10,7 @@ build_steps: &build_steps
         command: |-
           echo "Ruby version: " $(ruby -v)
           echo "Rails version: " $(rails -v)
-        name: Show build information
+        name: Show build information 
     - run:
         name: Run tests
         command: rake
