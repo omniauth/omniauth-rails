@@ -1,27 +1,27 @@
+Layout/AccessModifierIndentation:
+  EnforcedStyle: outdent
+
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+
 Metrics/BlockNesting:
   Max: 2
 
-Metrics/ClassLength:
-  CountComments: false
-  Max: 120
+Metrics/LineLength:
+  AllowURI: true
+  Enabled: false
 
-Metrics/PerceivedComplexity:
-  Max: 8
-
-Metrics/ModuleLength:
+Metrics/MethodLength:
   CountComments: false
-  Max: 120
+  Max: 10
 
 Metrics/ParameterLists:
-  Max: 3
+  Max: 4
   CountKeywordArgs: true
-
-Metrics/AbcSize:
-  Enabled: false
 
 Style/CollectionMethods:
   PreferredMethods:
-    collect:  'map'
+    map:      'collect'
     reduce:   'inject'
     find:     'detect'
     find_all: 'select'
@@ -29,41 +29,27 @@ Style/CollectionMethods:
 Style/Documentation:
   Enabled: false
 
-Style/DotPosition:
-  EnforcedStyle: trailing
-
 Style/DoubleNegation:
   Enabled: false
 
-Style/EachWithObject:
-  Enabled: false
-
-Style/Encoding:
+Style/ExpandPathArguments:
   Enabled: false
 
 Style/HashSyntax:
   EnforcedStyle: hash_rockets
 
-Style/Lambda:
+Style/StderrPuts:
   Enabled: false
-
-Style/SingleSpaceBeforeFirstArg:
-  Enabled: false
-
-Style/SpaceAroundOperators:
-  MultiSpaceAllowedForOperators:
-    - "="
-    - "=>"
-    - "||"
-    - "||="
-    - "&&"
-    - "&&="
-
-Style/SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
 
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
-Style/TrivialAccessors:
-  Enabled: false
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+  

@@ -1,23 +1,27 @@
-# coding: utf-8
-lib = File.expand_path("../lib", __FILE__)
+# frozen_string_literal: true
+lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "omniauth-rails/version"
 
-Gem::Specification.new do |spec|
-  spec.name          = "omniauth-rails"
-  spec.version       = OmniAuthRails::VERSION
-  spec.authors       = ["Erik Michaels-Ober", "Douwe Maan"]
-  spec.email         = ["sferik@gmail.com", "douwe@gitlab.com"]
+require 'omniauth-rails/version'
 
-  spec.description   = "Ruby on Rails extensions to OmniAuth"
-  spec.summary       = spec.description
-  spec.homepage      = "https://github.com/intridea/omniauth-rails"
-  spec.license       = "MIT"
+Gem::Specification.new do |gem|
+  gem.authors       = ['Tom Milewski']
+  gem.email         = ['tmilewski@gmail.com']
+  gem.description   = 'Official Rails OmniAuth gem.'
+  gem.summary       = gem.description
+  gem.homepage      = 'https://github.com/omniauth/omniauth-rails'
+  gem.license       = 'MIT'
 
-  spec.files         = `git ls-files -z`.split("\x0")
-  spec.require_paths = ["lib"]
+  gem.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  gem.files         = `git ls-files`.split("\n")
+  gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  gem.name          = 'omniauth-rails'
+  gem.require_paths = %w[lib]
+  gem.version       = OmniAuth::Rails::VERSION
 
-  spec.add_dependency "omniauth"
-  spec.add_dependency "rails"
-  spec.add_development_dependency "bundler", "~> 1.9"
+  gem.add_dependency 'omniauth', '~> 1.0'
+  gem.add_dependency 'rails'
+  gem.add_development_dependency 'rack-test'
+  gem.add_development_dependency 'rspec', '~> 3.5'
+  gem.add_development_dependency 'simplecov'
 end

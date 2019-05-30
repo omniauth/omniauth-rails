@@ -1,7 +1,13 @@
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-# Specify your gem's dependencies in omniauth-rails.gemspec
+source 'https://rubygems.org'
+
+gem 'rake'
+
+group :test do
+  gem 'coveralls', :require => false
+  gem 'rspec', '~> 3.5.0'
+  gem 'rubocop'
+end
+
 gemspec
-
-gem "rake"
-gem "rubocop"
