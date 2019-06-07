@@ -60,14 +60,6 @@ jobs:
     <<: *ruby-2-4
     <<: *rails-5-2
     <<: *build_steps
-  "ruby-2-4-rails-6-0":
-    <<: *ruby-2-4
-    <<: *rails-6-0
-    <<: *build_steps
-  "ruby-2-4-rails-edge":
-    <<: *ruby-2-4
-    <<: *rails-edge
-    <<: *build_steps
   "ruby-2-5-rails-4-2":
     <<: *ruby-2-5
     <<: *rails-4-2
@@ -116,15 +108,11 @@ workflows:
       - "ruby-2-4-rails-4-2"
       - "ruby-2-4-rails-5-1"
       - "ruby-2-4-rails-5-2"
-      - "ruby-2-4-rails-6-0"
-      - "ruby-2-4-rails-edge"
       - "ruby-2-5-rails-4-2"
       - "ruby-2-5-rails-5-1"
       - "ruby-2-5-rails-5-2"
       - "ruby-2-5-rails-6-0"
-      - "ruby-2-5-rails-edge"
       - "ruby-2-6-rails-4-2"
       - "ruby-2-6-rails-5-1"
       - "ruby-2-6-rails-5-2"
       - "ruby-2-6-rails-6-0"
-      - "ruby-2-6-rails-edge"
