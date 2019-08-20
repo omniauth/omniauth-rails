@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.description   = "Ruby on Rails extensions to OmniAuth"
   spec.summary       = spec.description
-  spec.homepage      = "https://github.com/intridea/omniauth-rails"
+  spec.homepage      = "https://github.com/omniauth/omniauth-rails"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
